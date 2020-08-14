@@ -1,0 +1,1430 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<dos.h>
+char name1[10];
+char name2[10];
+int pre1 =0 ,next1 =0;
+int pre2 =0,next2 =0;
+int arr[101];
+int temp1 =0;
+int temp2 =0;
+int pos=0;
+int pos1=0;
+void Bodder(void);
+void Loading(void);
+void welcome(void);
+void end(void);
+void setArray(void);
+void dice(int);
+void climb(int);
+void climb2(int);
+void kill(int);
+void kill2(int);
+void Ladder(void);
+void snake(void);
+void player1(void);
+void player2(void);
+void print(void);
+
+
+
+void Loading() {
+	int i,j;
+        for(i=1;i<=24;i++) {
+
+        	for(j=1;j<=78;j++) {
+                	if(i==1 || j==1 ||j==78 || i==24)
+                        printf(" ");
+                        else
+                        printf(" ");
+                }
+                printf("\n");
+        }
+
+        gotoxy(10,10);
+        printf("Enter player1 name  ");
+
+        scanf("%s",&name1);
+        fflush(stdin);
+        gotoxy(10,12);
+        printf("%s Your dice name is 1000 ",name1);
+       gotoxy(10,14);
+       printf("Enter palyer2 name  ");
+       scanf("%s",&name2);
+       fflush(stdin);
+       gotoxy(10,16);
+       printf("%s your dice name is 2000 ",name2);
+
+
+        for(i=1;i<=4;i++) {
+
+
+        	for(j=1;j<=30;j++) {
+                	if(i==1 || j==1  || j== 30 || i==4)
+                        {  gotoxy(30+j,18+i);
+			   printf("!");
+                         }
+                        else
+			{gotoxy(30+j,18+i);
+			printf(" ");
+
+                         }
+
+                }
+
+                printf("\n");
+           }
+
+
+           printf(" \t\t\t\t\b\bLoading ..........");
+sleep(1);
+for(i=2;i<=28 ;i++) {
+        delay(100);
+        gotoxy(30+i,21);
+  //    textcolor(11);
+      printf("*>");
+
+
+        gotoxy(30+i,20);
+  //     textcolor(11);
+       printf("*>");
+
+     gotoxy(5,5);
+  //   textcolor(111);
+     textbackground(4);
+   }
+
+}
+
+
+
+void player_name() {
+      pre1 = pos1;
+      next1=pre1+temp1;
+      pre2 = pos;
+      next2 =pre2+ temp2 ;
+
+ gotoxy(57,13);
+ printf("%s :",name1);
+ gotoxy(49,15);
+
+ printf("previous = %d   next = %d",pre1,next1);
+ gotoxy(57,17);
+  printf("%s : ",name2);
+
+ gotoxy(49,19);
+
+ printf("previous = %d   next = %d",pre2,next2);
+
+ }
+
+void climb2(int a) { // for player two
+     int i;
+int temp ;
+i = a;
+
+ switch(a) {
+  case 7:
+ 	clrscr();
+	gotoxy(32,12);
+	printf("Wow! %s  You Gotta Ladder",name2);
+	sound(1000);
+	delay(50);
+        getch();
+
+	nosound();
+             Bodder();
+           for(; i<=38; )  {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+          i=pos;
+        }
+
+        pos = 38;
+
+	break;
+  case 10:
+
+		clrscr();
+	gotoxy(32,12);
+
+		printf("Wow! %s  You Gotta Ladder",name2);
+	sound(1000);
+	delay(50);
+         getch();
+
+        nosound();
+            Bodder();
+          for(; i<=25;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+          i=pos;
+
+        }
+
+        	pos = 25;
+
+
+	break;
+  case 8:
+
+		clrscr();
+	gotoxy(32,12);
+
+		printf("Wow! %s  You Gotta Ladder",name2);
+	sound(1000);
+	delay(50);
+         getch();
+        nosound();
+            Bodder();
+          for(; i<=30 ; ) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+              i=pos;
+        }
+
+
+        	pos = 30;
+	break;
+  case 21:
+
+		clrscr();
+	gotoxy(32,12);
+
+       printf("Wow! %s  You Gotta Ladder",name2);
+	sound(1000);
+	delay(50);
+        getch();
+       nosound();
+              Bodder();
+            for(; i<=42;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+          i=pos;
+        }
+
+    		pos = 42;
+
+	break;
+  case 28:
+                clrscr();
+	gotoxy(32,12);
+        printf("Wow! %s  You Gotta Ladder",name2);
+    	sound(1000);
+	delay(50);
+         getch();
+	nosound();
+         Bodder();
+         for(; i<=74;) {
+      	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+        i=pos;
+        }
+
+        pos = 74;
+
+	break;
+  case 71:
+
+	clrscr();
+	gotoxy(32,12);
+              printf("Wow! %s  You Gotta Ladder",name2);
+
+	sound(1000);
+	delay(50);
+         getch();
+	nosound();
+               Bodder();
+             for(; i<=92;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+         i=pos;
+        }
+        pos = 92;
+	break;
+  case 87:
+
+	clrscr();
+	gotoxy(32,12);
+        printf("Wow! %s  You Gotta Ladder",name2);
+	sound(1000);
+	delay(50);
+         getch();
+        nosound();
+               Bodder();
+             for(; i<=99;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos++;
+         i=pos;
+        }
+        pos = 99;
+	break;
+
+   }
+
+
+ }
+
+
+
+void climb(int a) { // for player one
+     int i = a;
+int temp ;
+
+ switch(a) {
+  case 7:
+
+
+
+	clrscr();
+	gotoxy(32,12);
+	printf("Wow! %s  You Gotta Ladder",name1);
+	sound(1000);
+	delay(50);
+        getch();
+
+	nosound();
+             Bodder();
+           for(; i<=38;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+         i = pos1;
+        }
+
+        pos1 = 38;
+
+	break;
+  case 10:
+
+		clrscr();
+	gotoxy(32,12);
+	printf("Wow! %s  You Gotta Ladder",name1);
+
+	sound(1000);
+	delay(50);
+         getch();
+
+        nosound();
+            Bodder();
+          for(; i<=25;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+         i=pos1;
+        }
+
+        	pos1 = 25;
+
+
+	break;
+  case 8:
+
+		clrscr();
+	gotoxy(32,12);
+	printf("Wow! %s  You Gotta Ladder",name1);
+
+	sound(1000);
+	delay(50);
+         getch();
+        nosound();
+            Bodder();
+          for(; i<=30;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+        i=pos1;
+        }
+
+
+        	pos1 = 30;
+	break;
+  case 21:
+
+		clrscr();
+	gotoxy(32,12);
+
+     	printf("Wow! %s  You Gotta Ladder",name1);
+	sound(1000);
+	delay(50);
+        getch();
+       nosound();
+              Bodder();
+            for(; i<=42;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+           i=pos1;
+        }
+
+    		pos1 = 42;
+
+	break;
+  case 28:
+                clrscr();
+	gotoxy(32,12);
+
+     	printf("Wow! %s  You Gotta Ladder",name1);
+	sound(1000);
+	delay(50);
+         getch();
+	nosound();
+               Bodder();
+             for(; i<=74;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+          i=pos1;
+        }
+
+        pos1 = 74;
+
+	break;
+  case 71:
+
+	clrscr();
+	gotoxy(32,12);
+   	printf("Wow! %s  You Gotta Ladder",name1);
+
+	sound(1000);
+	delay(50);
+         getch();
+	nosound();
+               Bodder();
+             for(; i<=92;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+          i=pos1;
+        }
+        pos1 = 92;
+	break;
+  case 87:
+      //	pos = 99;
+	clrscr();
+	gotoxy(32,12);
+   	printf("Wow! %s  You Gotta Ladder",name1);
+
+
+	sound(1000);
+	delay(50);
+         getch();
+        nosound();
+               Bodder();
+             for(; i<=99;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1++;
+           i=pos1;
+        }
+        pos1 = 99;
+	break;
+
+   }
+
+
+ }
+
+
+
+void welcome() {
+	int i ,j;
+	for(i=1;i<=24;i++) {
+		for(j=1;j<=78;j++) {
+		if(j==1 ||i==1 ||j==78 ||i==24)
+		{delay(10);
+		sound(500);
+		printf("%");
+
+		}
+		else
+		printf(" ");
+	}
+	printf("\n");
+	}
+	gotoxy(20,12);
+	printf("Welcome to the Snake & Ladder game");
+	    gotoxy(60,20);
+  printf("By HAKA Coders");
+
+
+	gotoxy(52,21);
+
+
+      printf("TIT Advance");
+
+  nosound();
+     getch();
+
+
+}
+void end() {
+	int i ,j;
+	for(i=1;i<=24;i++) {
+		for(j=1;j<=78;j++) {
+		if(j==1 ||i==1 ||j==78 ||i==24)
+		{delay(10);
+		sound(500);
+		printf("%");
+
+		}
+		else
+		printf(" ");
+	}
+	printf("\n");
+	}
+	gotoxy(20,12);
+	printf("Thanks for playing Snake & Ladder game");
+	    gotoxy(60,20);
+        printf(" BY,HIMANSHU JAIN");
+
+
+	gotoxy(52,21);
+
+
+
+  nosound();
+
+    getch();
+
+
+
+}
+void setArray() {
+int i;
+	for(i=1;i<=100;i++) {
+	arr[i] = i;
+
+	}
+
+}
+
+void print() {
+int i;
+int z=2;
+//gotoxy(1,1);
+//Bodder();
+
+
+printf("\n");
+
+gotoxy(2,z);
+for(i=100;i>=1;i--)
+{
+
+printf(" %d",arr[i]);
+if(i%10==0)
+{
+printf("\n ------------------------------\n");
+
+}
+z++;
+}
+
+printf("  START");
+if(pos1 ==0) {
+printf(" -> 1000 ");
+}
+if(pos  == 0 )
+printf(" 2000 " );
+gotoxy(1,24);
+
+printf("\t\t\tThanks    HAKA        Coders");
+
+}
+void player1(void);
+
+void player1() {
+int x,y=1;
+        int local;
+    int a;
+
+      gotoxy(35,12);
+    printf("%s =",name1);//,temp1);
+
+
+
+  Ankit:
+           temp1 = rand()%6+1;
+       for(x=1;x<=2;x++) {
+
+        while(y<=6) {
+        dice(y);
+        delay(90);
+        y++;
+
+     	}
+    //    delay(20);
+
+        y=1;
+     }
+
+
+     dice(temp1);
+     player_name();
+     gotoxy(35,12);
+     printf("%s = %d",name1,temp1);
+
+     local =pos1;
+        Bodder();
+
+          dice(temp1);
+      snake();
+      Ladder();
+
+
+    for(y=1;y<=temp1+1 ;y++) {
+
+
+      a = arr[pos1];
+      arr[pos1] = 1000;
+
+     gotoxy(35,12);
+     printf("%s = %d",name1,temp1);
+        // sleep(1);
+        print();
+          delay(300);
+     // clrscr();
+       arr[pos1] = a;
+          pos1++;
+    }
+     pos1 = local;
+
+
+      pos1 = pos1+temp1;
+      delay(700);
+      climb(pos1);// here we check is in the dice position there is a ladder
+      kill(pos1);  //  snake
+      a = arr[pos1];
+       arr[pos1] = 1000;
+
+       getch();
+       clrscr();
+       Bodder();
+       print();
+        if(temp1 == 6)
+   {   arr[pos1] = a;
+         goto Ankit;
+
+    }
+
+}
+void player2(){
+          int x =1,y =1;
+          int local, a;
+          gotoxy(35,12);
+          printf("%s = %d",name2,temp1);// %d",temp1);
+
+          Ankit:
+             temp2 = rand()%6+1;
+          for(x=1;x<=2;x++) {
+          while(y<=6) {
+          dice(y);
+             delay(90);
+             y++;
+         }
+             delay(20);
+             y=1;
+     }
+       dice(temp2);
+       player_name();
+       gotoxy(35,12);
+       printf("%s = %d",name2 ,temp2);
+       local =pos;
+       Bodder();
+            dice(temp2);
+      snake();
+      Ladder();
+
+      for(y=1;y<=temp2+1 ;y++) {
+      a = arr[pos];
+      arr[pos] = 2000;
+       gotoxy(35,12);
+       printf("%s = %d",name2 ,temp2);
+
+      print();
+    // sleep(1);
+      delay(300);
+     // clrscr();
+       arr[pos] = a;
+      pos++;
+    }
+   pos = local;
+    pos = pos+temp2;
+    delay(700);
+    climb2(pos);
+    kill2(pos);
+    a = arr[pos];
+    arr[pos] = 2000;
+    getch();
+    clrscr();
+     //
+    Bodder();
+    print();
+      if(temp2 == 6)
+ { arr[pos] = a;
+   goto Ankit;
+
+ }
+    arr[pos] = a;
+   //   player2();
+       arr[pos1] = a;
+
+
+   }
+
+void Bodder() {
+int i,j;
+        gotoxy(1,1);
+	for(i=1;i<=23;i++) {
+		for(j=1;j<=77;j++) {
+		if(i==1 || i==23||j==1 ||j==77)
+	      {	printf(" ");
+
+	      }
+		else
+		 printf(" ");
+	     }
+	       printf("\n");
+
+	}
+}
+
+
+   void dice(int a) {
+int i,j;
+snake();
+Ladder();
+ for(i=1;i<=9;i++)
+ {
+   for(j=1;j<=12;j++)
+   {
+      if( i==1 ||i==9 ||j==1 ||j==12)
+      {
+       gotoxy(34+j,12+i);
+       printf("%");
+      }
+       else
+       {
+	 printf(" ");
+       }
+    }
+     printf("\n");
+  }
+if(a==1)
+{
+ gotoxy(40,17);
+  printf("*");
+}
+
+if(a==2)
+{
+gotoxy(37,17);
+printf("*");
+gotoxy(43,17);
+printf("*");
+}
+
+if(a==3)
+{ gotoxy(37,15);
+ printf("*");
+ gotoxy(40,17);
+  printf("*");
+  gotoxy(43,19);
+  printf("*");
+}
+
+if(a==4){
+
+  gotoxy(37,15);
+  printf("*");
+  gotoxy(43,15);
+  printf("*");
+  gotoxy(37,19);
+  printf("*");
+  gotoxy(43,19);
+  printf("*");
+
+
+}
+
+if(a==5)
+{
+  gotoxy(37,15);
+  printf("*");
+  gotoxy(40,17);
+  printf("*");
+  gotoxy(43,15);
+  printf("*");
+  gotoxy(37,19);
+  printf("*");
+  gotoxy(43,19);
+  printf("*");
+
+
+}
+
+if(a==6)
+{
+  gotoxy(37,15);
+  printf("*");
+  gotoxy(37,17);
+  printf("*");
+
+  gotoxy(43,15);
+  printf("*");
+  gotoxy(37,19);
+  printf("*");
+  gotoxy(43,19);
+  printf("*");
+   gotoxy(43,17);
+  printf("*");
+  }
+
+
+
+}
+ void Ladder() {
+
+		  gotoxy(55,2);
+ printf("Ladder   : to \n");
+  gotoxy(56,3);
+   printf("7    ->    38\n");
+   gotoxy(56,4);
+     printf("10   ->    25\n");
+   gotoxy(56,5);
+  printf("8    ->    30");
+   gotoxy(56,6);
+  printf("21   ->   42");
+   gotoxy(56,7);
+  printf("28   ->   74");
+   gotoxy(56,8);
+  printf("71   ->   92");
+   gotoxy(56,9);
+  printf("87   ->   99");
+
+
+
+ }
+
+ void snake() {
+		  gotoxy(38,2);
+ printf("Snake   :  to \n");
+  gotoxy(37,3);
+   printf("32    ->    9\n");
+   gotoxy(37,4);
+     printf("37    ->    6\n");
+   gotoxy(37,5);
+  printf("48    ->   26");
+   gotoxy(37,6);
+  printf("63    ->   18");
+   gotoxy(37,7);
+  printf("88    ->   24");
+   gotoxy(37,8);
+  printf("95    ->   56");
+   gotoxy(37,9);
+  printf("97    ->   78");
+
+
+  }
+
+ void kill(int a) {     //for player 1
+       int i =1,temp =0;
+       i=a;
+  switch(a) {
+  case 32:
+
+	clrscr();
+	gotoxy(38,12);
+	printf("player 1 sting by snake");
+	sound(500);
+	delay(50);
+        getch();
+
+	nosound();
+                Bodder();
+            for(; i>=9;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+           Bodder();
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+         pos1 = 9;
+
+        break;
+  case 37:
+
+		clrscr();
+	gotoxy(38,12);
+	printf("player 1 sting by snake");
+	sound(2);
+	delay(500);
+          getch();
+	nosound();
+                Bodder();
+             for(; i>=6;) {
+
+        	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+	pos1 = 6;
+
+
+	break;
+  case 48:
+
+		clrscr();
+	gotoxy(38,12);
+	printf("player 1 sting by snake");
+	sound(500);
+	delay(50);
+          getch();
+
+	nosound();
+                  Bodder();
+            for(; i>=26;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+        	pos1 = 26;
+	break;
+  case 63:
+       //	pos1 = 18;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 1 stung by snake");
+        sound(500);
+	delay(50);
+         getch();
+        nosound();
+       Bodder();
+              for(; i>=18;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+
+
+        pos1 = 18;
+	break;
+
+  case 88:
+      //	pos1 = 24;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 1 sting by snake");
+	sound(600);
+	delay(50);
+           getch();
+           nosound();
+                    Bodder();
+                for(; i>=24;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+        pos1 = 24;
+	break;
+  case 95:
+     //	pos1 = 56;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 1 sting by snake");
+	sound(400);
+	delay(50);
+          getch();
+	    nosound();
+                  Bodder();
+              for(; i>=56;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+           pos1 = 56;
+	break;
+  case 97:
+   //	pos1 = 78;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 1 sting by snake");
+
+		sound(300);
+	delay(50);
+           getch();
+
+	    nosound();
+                  Bodder();
+              for(; i>=78;) {
+
+  	dice(temp1);
+        snake();
+        Ladder();
+          temp = arr[pos1];
+          arr[pos1] = 1000;
+
+          print();
+          delay(200);
+          arr[pos1] = temp;
+          pos1--;
+           i=pos1;
+        }
+        pos1 = 78;
+	break;
+
+   }
+
+ }
+
+   void kill2(int a) {     //for player 2
+     int i ,temp ;
+        i =a;
+
+  switch(a) {
+  case 32:
+      //	pos = 8;
+	clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+		sound(700);
+	delay(50);
+             getch();
+	    nosound();
+                Bodder();
+            for(; i>=8;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+      pos =   8;
+	break;
+  case 37:
+       //	pos = 6;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+		sound(400);
+	delay(50);
+             getch();
+		    nosound();
+                  Bodder();
+              for(; i>=6;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+         pos = 6;
+	break;
+  case 48:
+      //	pos = 26;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+	sound(800);
+	delay(50);
+        getch();
+	nosound();
+              Bodder();
+              for(; i>=26;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+         pos = 26;
+	break;
+  case 63:
+     //	pos = 18;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+	sound(900);
+	delay(50);
+           getch();
+          nosound();
+             Bodder();
+              for(; i>=18;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+       pos = 18;
+	break;
+  case 88:
+    //	pos = 24;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+	sound(500);
+	delay(50);
+          getch();
+          nosound();
+             Bodder();
+              for(; i>=24;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+         pos = 24;
+	break;
+  case 95:
+      //	pos = 56;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+	sound(900);
+	delay(50);
+          getch();
+	 nosound();
+             Bodder();
+              for(; i>=56;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+         pos = 56;
+	break;
+  case 97:
+   //	pos = 78;
+		clrscr();
+	gotoxy(38,12);
+	printf("player 2 sting by snake");
+	sound(300);
+	delay(50);
+          getch();
+        nosound();
+            Bodder();
+              for(; i>=78;) {
+
+  	dice(temp2);
+        snake();
+        Ladder();
+          temp = arr[pos];
+          arr[pos] = 2000;
+
+          print();
+          delay(200);
+          arr[pos] = temp;
+          pos--;
+           i=pos;
+        }
+        pos = 78;
+
+	break;
+
+
+   }
+
+ }
+
+
+void main() {
+
+clrscr();
+
+randomize();
+
+//welcome();
+ Loading();
+//gotoxy(1,1);
+setArray();
+Bodder();
+
+print();
+
+
+dice(5);
+snake();
+
+Ladder();
+gotoxy(50,17);
+
+  delay(250);
+printf("Press Enter to Start");
+getch();
+clrscr();
+Bodder();
+print();
+
+Kabra:
+player1();
+	   if(pos1>= 10)
+
+	   { clrscr();
+
+	     gotoxy(30,12);
+	     printf("Congratulation!! %s  you have won",name1);
+	     getch();
+
+	     goto jain;     // bahar
+
+	   }
+	   if(pos >= 10) {
+
+	   clrscr();
+
+	   gotoxy(30,12);
+	   printf("Congratulation!! %s you have won",name2);
+
+     getch();
+
+	    goto jain;  // exit form goto statement
+
+	      }
+player2();
+	   if(pos1>= 10)
+
+	   { clrscr();
+
+           gotoxy(30,12);
+	     printf("Congratulation!! %s  you have won",name1);
+	     getch();
+	     goto jain;     // bahar
+
+	   }
+	   if(pos >= 10) {
+
+	   clrscr();
+
+	   gotoxy(30,12);
+	   printf("Congratulation!! %s you have won",name2);
+
+     getch();
+
+	    goto jain;  // exit form goto statement
+
+	      }
+if(pos1 <=99 ||pos <=99)
+goto Kabra;
+   jain:
+	  nosound();
+    clrscr();
+//   end();
+
+
+}
