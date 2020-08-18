@@ -595,7 +595,7 @@ void end() {
 	gotoxy(20,12);
 	printf("Thanks for playing Snake & Ladder game");
 	    gotoxy(60,20);
-        printf(" BY,HIMANSHU JAIN");
+        printf(" BY,Ankit Kumar");
 
 
 	gotoxy(52,21);
